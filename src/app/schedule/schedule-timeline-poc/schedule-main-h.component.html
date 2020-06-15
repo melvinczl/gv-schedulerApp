@@ -1,0 +1,29 @@
+<div class="menu-bar">
+  <div class="menu-left">
+    <a><span class="glyphicon glyphicon-plus-sign" (click)='showEventModal(eventModalId, 1)'></span></a>
+    <a><span class="glyphicon glyphicon-minus-sign"></span></a>
+    <a><span class="glyphicon glyphicon-remove-sign"></span></a>
+  </div>
+  {{currentDate}}
+  <div class="menu-right">
+    <a><span class="glyphicon glyphicon-tasks" style="padding-right:5px;"></span></a>
+    Ingest <span class="glyphicon glyphicon-ok-circle" style="color:#8FFF20;"></span>
+  </div>
+</div>
+
+<div id="schedule-container" class="schedule-container" (scroll)='onContainerScroll($event)' style="height:900px; margin-top:50px; overflow-y:auto">
+  <!-- Streams sidebar -->
+  <schedule-stream-list [streams]='streams'></schedule-stream-list>
+  
+  <!-- Timeline viewport -->
+  <div id="timeline-viewable" class="timeline-viewable" style="width:calc(100% - 200px); height:950px; /*position:relative;*/ left:200px; overflow-x:auto; overflow-y:hidden;">
+    <schedule-timeline-h [streams]='streams'></schedule-timeline-h>
+  </div>
+</div>
+
+<!-- Modal backdrop -->
+<div class="modal-backdrop fade in" *ngIf='toggleModalBackdrop'></div>
+
+<schedule-modal id="eventModal">
+  <event-detail [modalId]='eventModalId' [streams]='streams' (toggleModalBackdrop)='setToggleModalBackdrop($event)'></event-detail>
+</schedule-modal>

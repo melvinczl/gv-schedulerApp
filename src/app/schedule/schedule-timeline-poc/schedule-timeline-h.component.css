@@ -1,0 +1,75 @@
+a {
+    cursor: pointer;
+}
+
+ol, ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.time-indicator {
+    position: absolute; 
+    top: 70px; 
+    transform: translateX(-50%);
+    z-index: 101;
+}
+
+.time-indicator-line {
+    width: 1px; 
+    height: 825px;
+    position: absolute; 
+    top: 75px; 
+    background: red;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.timeline li {
+    width:50px; 
+    height:875px; 
+    position:relative; 
+    float:left;
+}
+
+.timeline li:nth-of-type(24) {
+    /*this is used to draw 12am vertical lines*/
+    border-right: 1px solid lightgray;
+}
+
+.timeline-scale li {
+    width:50px; 
+    height:50px; 
+    position:relative; 
+    float:left;
+    border-right: 1px lightgray solid;
+}
+
+.timeline-scale li span {
+    display: inline-block;
+    transform: translateX(-50%) translateY(50%);
+}
+
+.timeline-scale li .last-hour {
+    transform: translateX(100%) translateY(-50%);
+}
+
+.timeline-scale li .scale-mask {
+    /*used to mask border to give ruler scale effect*/
+    width: 1px; 
+    height: 60%; 
+    position: absolute; 
+    top: -1px; 
+    right: -1px; 
+    background-color: #878787;
+}
+
+.timeline-row {
+    width: 100%; 
+    height: 175px; 
+    position: relative;
+}
+
+.timeline-row:nth-of-type(2n) {
+    width: calc(100% - 1px); /*prevent overlap on 12am border*/
+    background: #878787;
+}

@@ -1,0 +1,48 @@
+ul, ol {
+    list-style: none;
+}
+
+/* .schedule .channels .channel-col > ul */
+ul {
+    position: relative;
+    /*min 800px*/
+    height: calc(1200px - 2px);
+    display: block;
+    overflow: visible;
+    padding: 0;
+}
+
+/* .schedule .channels .single-event  */
+.single-event {
+    position: absolute;
+    z-index: 3;
+    width: calc(100% + 2px);
+    left: -1px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+    flex-shrink: 1;
+    height: auto;
+    max-width: none;
+    margin-right: 0;
+}
+
+/* .schedule .channels .single-event div  */
+.single-event div {
+    display:block;
+    height: 100%;
+    padding: 5px;
+}
+
+/* .schedule .event-name  */
+.event-name {
+    font-size: 16px;
+}
+
+/* .schedule .event-time,
+.schedule .event-name  */
+.event-time, .event-name {
+    display: block;
+    color: white;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

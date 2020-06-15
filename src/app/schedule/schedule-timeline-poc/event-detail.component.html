@@ -1,0 +1,47 @@
+<div class="modal-dialog modal-sm">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <form #eventForm="ngForm" (ngSubmit)='onSubmit(eventForm)'>
+      <div class="modal-header">
+        <button type="button" class="close" (click)='closeModal(eventForm)'>&times;</button>
+        <h4 class="modal-title">{{eventActionText}} Event</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal">
+          <label class="control-label">Name:</label>
+          <input class="form-control" name="name" [ngModel]='event.name'>
+        
+          <label class="control-label">IP Source:</label>
+          <input class="form-control" >
+        
+          <label class="control-label">Stream:</label>
+          <select class="form-control" name="streamID" [ngModel]='event.streamID'>
+            <option value="">--Select a stream--</option>
+            <option *ngFor='let stream of streams' [value]='stream.id'>{{stream.name}}</option>
+          </select>
+          
+          <label class="control-label">Clip Location:</label>
+          <input class="form-control" name="clipLocation" [ngModel]='event.clipLocation'>
+        
+          <label class="control-label">Start Date:</label>
+          <input class="form-control" name="startDateTime" [ngModel]='event.startDateTime'>
+        
+          <label class="control-label">End Date:</label>
+          <input class="form-control" name="endDateTime" [ngModel]='event.endDateTime'>
+        
+          <label class="control-label">Duration:</label>
+          <input class="form-control" name="duration" [ngModel]='event.duration'>
+        
+          <label class="" style="display:inline-block; width: 60%; padding-top: 7px; margin-bottom:5px; font-weight:bold;">Start Record Now</label>
+          <input type="checkbox" style="padding-top: 7px;">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">{{eventAction == 1 ? 'Add' : 'Save'}}</button>
+        <button type="button" *ngIf='eventAction > 1' class="btn btn-danger" (click)='deleteEvent(event.id)'>Delete</button>
+        <button type="button" class="btn btn-default" (click)='closeModal(eventForm)'>Cancel</button>
+      </div>
+    </form>
+  </div>
+  
+</div>

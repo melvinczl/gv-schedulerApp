@@ -1,0 +1,118 @@
+{
+  "events": [
+    {
+      "name": "1h event",
+      "streamID": "GVIO1-S1",
+      "clipLocation": "",
+      "startDateTime": "6/15/2020 01:00",
+      "endDateTime": "6/15/2020 02:00",
+      "duration": "",
+      "id": "e1",
+      "status": 7
+    },
+    {
+      "id": "e2",
+      "name": "2h event",
+      "streamID": "GVIO1-S1",
+      "startDateTime": "6/15/2020 08:00",
+      "endDateTime": "6/15/2020 10:00",
+      "duration": "",
+      "clipLocation": "",
+      "status": 1
+    },
+    {
+      "id": "e3",
+      "name": "1.5h event",
+      "streamID": "GVIO1-S1",
+      "startDateTime": "6/15/2020 14:00",
+      "endDateTime": "6/15/2020 15:30",
+      "duration": "",
+      "clipLocation": "",
+      "status": 6
+    },
+    {
+      "id": "e4",
+      "name": "1h 15m event",
+      "streamID": "GVIO1-S2",
+      "startDateTime": "6/15/2020 16:45",
+      "endDateTime": "6/15/2020 18:00",
+      "duration": "",
+      "clipLocation": "",
+      "status": 1
+    },
+    {
+      "name": "update2",
+      "streamID": "GVIO1-S4",
+      "clipLocation": "",
+      "startDateTime": "6/15/2020 15:19",
+      "endDateTime": "6/15/2020 16:19",
+      "duration": "",
+      "id": "KjLtI8t",
+      "status": 1
+    },
+    {
+      "name": "test",
+      "streamID": "GVIO1-S3",
+      "clipLocation": "test",
+      "startDateTime": "6/15/2020 09:21",
+      "endDateTime": "6/15/2020 10:51",
+      "duration": "",
+      "id": "f8xXsgC",
+      "status": 1
+    },
+    {
+      "name": "add test",
+      "streamID": "GVIO1-S3",
+      "clipLocation": "",
+      "startDateTime": "6/15/2020 19:23",
+      "endDateTime": "6/15/2020 20:23",
+      "duration": "",
+      "id": "2iC6TNY",
+      "status": 1
+    },
+    {
+      "name": "Test",
+      "streamID": "GVIO1-S3",
+      "clipLocation": "",
+      "startDateTime": "6/16/2020 11:20",
+      "endDateTime": "6/16/2020 12:20",
+      "duration": "",
+      "id": "X7ktYrX",
+      "status": 1
+    }
+  ],
+  "channels": [
+    {
+      "id": "GVIO1-S1",
+      "name": "stream 1",
+      "device": "GVIO1",
+      "ipSource": "VTR1",
+      "destination": "default",
+      "aspectRatio": "4:3"
+    },
+    {
+      "id": "GVIO1-S2",
+      "name": "stream 2",
+      "device": "GVIO1",
+      "ipSource": "CAM1",
+      "destination": "default",
+      "aspectRatio": "16:9"
+    },
+    {
+      "id": "GVIO1-S3",
+      "name": "stream 3",
+      "device": "GVIO1",
+      "ipSource": "127.0.0.1",
+      "destination": "default",
+      "aspectRatio": "16:9"
+    },
+    {
+      "id": "GVIO1-S4",
+      "name": "stream 4",
+      "device": "GVIO1",
+      "ipSource": "127.0.0.1",
+      "destination": "default",
+      "aspectRatio": "4:3"
+    }
+  ]
+}

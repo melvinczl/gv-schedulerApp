@@ -1,0 +1,15 @@
+<div class="events-canvas" style="width:100%; height:100%; position:absolute;">
+  <!-- Events list for stream -->
+  <ul>
+    <!-- Event item (repeats for each event in stream) -->
+    <li class="single-event" *ngFor='let event of events' (click)='showEventModal("eventModal", 2, event)'
+     [style.left.px]='setEventLeft(event)'
+     [style.width.px]='setEventWidth(event)'
+     [style.backgroundColor]='setEventColor(event)'>
+      <div style="height:100%; padding:5px 0;">
+        <!-- <span class="event-time">1.00 am - 2.00 am</span> -->
+        <em class="event-name">{{event.name}}</em>
+      </div>
+    </li>
+  </ul>
+</div>

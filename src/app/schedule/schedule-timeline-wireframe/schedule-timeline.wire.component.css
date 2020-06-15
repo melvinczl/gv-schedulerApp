@@ -1,0 +1,21 @@
+.timescale {
+    width:100px;
+    text-align:left;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 1px 1px 1px;
+    border-collapse: collapse;
+}
+
+.ch-sidebar {
+    padding: 10px 5px 0;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 1px 1px;
+    border-collapse: collapse;
+}
+
+.no-padding-lr {
+    padding-left: 0;
+    padding-right: 0;
+}

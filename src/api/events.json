@@ -1,0 +1,42 @@
+[
+    {
+        "id": "e1",
+        "name": "Dummy event",
+        "streamID": "GVIO1-S1",
+        "startDateTime": "01/11/2018 01:00",
+        "endDateTime": "01/11/2018 02:00",
+        "duration": "",
+        "clipLocation": "",
+        "status": ""
+    },
+    {
+        "id": "e2",
+        "name": "2h event",
+        "streamID": "GVIO1-S1",
+        "startDateTime": "01/11/2018 08:00",
+        "endDateTime": "01/11/2018 10:00",
+        "duration": "",
+        "clipLocation": "",
+        "status": ""
+    },
+    {
+        "id": "e3",
+        "name": "1.5h event",
+        "streamID": "GVIO1-S1",
+        "startDateTime": "01/11/2018 14:00",
+        "endDateTime": "01/11/2018 15:30",
+        "duration": "",
+        "clipLocation": "",
+        "status": ""
+    },
+    {
+        "id": "e4",
+        "name": "1h 15m event",
+        "streamID": "GVIO1-S2",
+        "startDateTime": "01/11/2018 16:45",
+        "endDateTime": "01/11/2018 18:00",
+        "duration": "",
+        "clipLocation": "",
+        "status": ""
+    }
+]

@@ -1,0 +1,43 @@
+<div id="timeline-canvas" class="timeline-canvas" style="width:3600px; height:950px; display:inline-block;">
+  
+  <!-- A Full Day Timeline (repeats for each day) -->
+  <div class="timeline-container" *ngFor='let timeline of timelines' [style.width.px]='timelineContainerWidth' style="float:left;">
+    <!-- Fixed Timeline Scale -->
+    <div id="timeline-scale" class="timeline-scale" style="width:100%; height:75px; position:relative; display:flow-root; color:whitesmoke; background:#878787; border-top:1px lightgray solid; z-index:100;">
+      <!-- This is for date of single timeline -->
+      <div style="width:100%; height:25px; padding-top:5px;">
+        <span>{{timeline}}</span>
+      </div>
+
+      <!-- Indicator of current time -->
+      <span class="glyphicon glyphicon-triangle-bottom time-indicator" *ngIf='timeline === currentDate' [style.left.px]='updateTimeIndicator()'></span>
+      <span class="time-indicator-line" *ngIf='timeline === currentDate' [style.left.px]='updateTimeIndicator()'></span>
+
+      <ol>
+        <li *ngFor='let time of timeScale; let t = index'>
+          <span *ngIf='t !== 23'>{{time}}</span>
+          <span class="last-hour" *ngIf='t === 22'>11:00</span>
+          <div class="scale-mask"></div>
+        </li>
+      </ol>
+    </div>
+    
+    <!-- Timeline backdrop -->
+    <div class="timeline" style="width:100%; height:875px; float:left; color:whitesmoke; background:#707070; /*z-index:98;*/">
+      <ol>
+        <li *ngFor='let time of timeScale'></li>
+      </ol>
+    </div>
+
+    <!-- Timeline overlay -->
+    <div class="stream-timeline" style="width:100%; height:875px; z-index:99;">
+      <!-- Stream row of Timeline (repeats for each stream) -->
+      <div class="timeline-row" *ngFor='let stream of streams'>
+        <!-- Events component for stream -->
+        <schedule-timeline-events [streamID]='stream.id' [date]='timeline'></schedule-timeline-events>
+      </div>
+
+    </div>
+  </div>
+  
+</div>

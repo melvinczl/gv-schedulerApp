@@ -1,0 +1,25 @@
+<ul>
+  <li class="single-event" 
+   *ngFor='let event of events'
+   [style.top.px]='setEventTop(event)'
+   [style.height.px]='setEventHeight(event)'
+   [style.backgroundColor]='setEventColor(event)'>
+    <div>
+      <span class="event-time">{{event.startDateTime}} - {{event.endDateTime}}</span>
+      <em class="event-name">{{event.name}}</em>
+    </div>
+  </li>
+
+  <!-- <li class="single-event" style="top:50px; height:50px; background-color:gray;">
+    <div>
+      <span class="event-time">1.00 am - 2.00 am</span>
+      <em class="event-name">Dummy event</em>
+    </div>
+  </li>
+  <li class="single-event" style="top:400px; height:100px; background-color:gray;">
+    <div>
+      <span class="event-time">8.00 am - 10.00 am</span>
+      <em class="event-name">2h event</em>
+    </div>
+  </li> -->
+</ul>

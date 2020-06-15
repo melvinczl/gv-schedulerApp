@@ -1,0 +1,159 @@
+<div class="menu-bar">
+  <div class="menu-left">
+    <span style="padding-right:5px;">{{clock}}</span>
+    <a><span class="glyphicon glyphicon-plus-sign" (click)='showEventModal("eventModal")'></span></a>
+    <a><span class="glyphicon glyphicon-minus-sign"></span></a>
+    <a><span class="glyphicon glyphicon-remove-sign"></span></a>
+  </div>
+  {{currentDate}}
+  <div class="menu-right">
+    <a><span class="glyphicon glyphicon-tasks" style="padding-right:5px;"></span></a>
+    Ingest <span class="glyphicon glyphicon-ok-sign" style="color:green;"></span>
+  </div>
+</div>
+  
+<div class="schedule">
+  <div class="timeline">
+    <!-- indicator of current time -->
+    <span class="glyphicon glyphicon-triangle-right time-indicator"
+      [style.top.px]='timeIndicatorPos'>
+    </span>
+
+    <ol>
+      <li *ngFor='let time of timeScale; let t = index'>
+        <span>{{time}}</span>
+        <span class="last-hour" *ngIf='t === 23'>12 AM</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="channels">
+    <ul>
+      <!-- channels as columns -->
+      <li class="channel-col" *ngFor='let channel of channels; let c = index'>
+        <div class="channel-header">
+          <div>
+            <a><span (click)='showChannelModal("channelModal",channel)'>{{channel.id}}</span></a>
+            <div style="float:right; font-size:12pt;">
+              <a><span class="glyphicon glyphicon-play-circle"></span></a>
+              <a><span class="glyphicon glyphicon-record"></span></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="channel-info alert-info" style="position:absolute; height:100px; width:inherit; padding:10px;">
+          test
+        </div> -->
+
+        <!-- Component to render events -->
+        <schedule-events [channelID]='channel.id'></schedule-events>
+
+      <!-- <li class="channel-col">
+        <div class="channel-info">
+          <span>Channel 1</span>
+        </div>
+        <ul>
+          <li class="single-event" style="top:50px; height:50px; background-color:gray;">
+            <div>
+              <span class="event-time">1.00 am - 2.00 am</span>
+              <em class="event-name">Dummy event</em>
+            </div>
+          </li>
+          <li class="single-event" style="top:400px; height:100px; background-color:gray;">
+              <div>
+                <span class="event-time">8.00 am - 10.00 am</span>
+                <em class="event-name">2h event</em>
+              </div>
+            </li>
+        </ul>
+      </li>
+
+      <li class="channel-col">
+        <div class="channel-info">
+          <span>Channel 2</span>
+        </div>
+        <ul>
+          <li class="single-event" style="top:237.5px; height:62.5px; background-color:cadetblue;">
+            <div>
+              <span class="event-time">4.45 am - 6.00 am</span>
+              <em class="event-name">1h 15m event</em>
+            </div>
+          </li>
+        </ul>-->
+      </li> 
+    </ul>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="channelModal">
+  <div class="modal-dialog modal-sm">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)='closeModal("channelModal")'>&times;</button>
+        <h4 class="modal-title">{{selectedChannel.id}}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal">
+          <label class="control-label">Name:</label>
+          <input class="form-control" [value]="selectedChannel.name">
+
+          <label class="control-label">Source:</label>
+          <input class="form-control" [value]="selectedChannel.source">
+
+          <label class="control-label">Location:</label>
+          <input class="form-control" [value]="selectedChannel.location">
+
+          <label class="control-label">Aspect:</label>
+          <input class="form-control" [value]="selectedChannel.aspectRatio">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-default" (click)='closeModal("channelModal")'>Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div class="modal" id="eventModal">
+  <div class="modal-dialog modal-sm">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)='closeModal("eventModal")'>&times;</button>
+        <h4 class="modal-title">Add Event</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal">
+          <label class="control-label">Name:</label>
+          <input class="form-control">
+
+          <label class="control-label">Aspect Ratio:</label>
+          <input class="form-control">
+
+          <label class="control-label">Start Date:</label>
+          <input class="form-control">
+
+          <label class="control-label">End Date:</label>
+          <input class="form-control">
+
+          <label class="control-label">Duration:</label>
+          <input class="form-control">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save</button>
+        <button type="button" class="btn btn-default" (click)='closeModal("channelModal")'>Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+<!-- Modal backdrop-->
+<div class="modal-backdrop fade in" *ngIf='toggleModalBackdrop'></div>

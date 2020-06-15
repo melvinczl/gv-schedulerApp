@@ -1,0 +1,35 @@
+a {
+    cursor: pointer;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.menu-bar {
+    width: calc(100% - 30px);
+    height:50px; 
+    position: fixed;
+    text-align:center;
+    padding:10px 5px; 
+    color: ghostwhite;
+    background: #878787;
+}
+
+.menu-bar a span {
+    color: ghostwhite;
+}
+
+.menu-left {
+    height: 100%;
+    width:30%; 
+    float:left; 
+    text-align:left;
+}
+
+.menu-right {
+    height: 100%;
+    width:30%; 
+    float:right; 
+    text-align:right;
+}

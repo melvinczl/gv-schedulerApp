@@ -1,0 +1,72 @@
+<div style="margin-top:10px">
+  <table style="width:100%">
+    <thead>
+      <tr>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div><!--  true content -->
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th class="col-lg-1 no-padding-lr"></th>
+                  <th *ngFor='let time of timeScale'
+                    class="col-lg-11 no-padding-lr timescale">
+                    {{time}}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor='let channel of channels; let c = index' style="border-bottom:1px black solid;">
+                  <td class="ch-sidebar">
+                    <div>
+                      <b>{{channel.id}}</b>
+                    </div>
+                    <div>
+                      <div class="col-sm-5 no-padding-lr">Name:</div>
+                      <div class="col-sm-7 no-padding-lr">{{channel.name}}</div>
+                    </div>
+                    <div>
+                      <div class="col-sm-5 no-padding-lr">Source:</div>
+                      <div class="col-sm-7 no-padding-lr">{{channel.source}}</div>
+                    </div>
+                    <div>
+                      <div class="col-sm-5 no-padding-lr">Location:</div>
+                      <div class="col-sm-7 no-padding-lr">{{channel.location}}</div>
+                    </div>
+                    <div>
+                      <div class="col-sm-5 no-padding-lr">Aspect:</div>
+                      <div class="col-sm-7 no-padding-lr">{{channel.aspectRatio}}</div>
+                    </div>
+                  </td>
+
+                  <td [colSpan]='timeScale.length'>
+                    <div style="height:110px">
+                      <table style="width:100%; height:inherit;">
+                        <tbody>
+                          <tr>
+                            <td *ngFor='let time of timeScale; let i = index'
+                              id='{{channel.id + i}}'
+                              style="vertical-align:top;"
+                              colspan="1">
+                                {{displayEvent(channel.id, i, c)}}
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </td>
+                  
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

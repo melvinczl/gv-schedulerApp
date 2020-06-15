@@ -1,0 +1,25 @@
+.stream:nth-of-type(2n) {
+    background:#878787;
+}
+
+.stream-header {
+    height: 30px;
+}
+
+.stream-header .stream-controls {
+    float: right;
+}
+
+.stream-details .detail-row {
+    height: 30px;
+}
+
+.stream-details .detail-row .detail-label {
+    width: 70px;
+}
+
+.stream-details .detail-row .detail-control {
+    width: 115px; 
+    border: none; 
+    background: #555555;
+}

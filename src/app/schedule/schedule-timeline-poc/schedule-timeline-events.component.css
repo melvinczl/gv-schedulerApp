@@ -1,0 +1,15 @@
+ol, ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.single-event {
+    height: 175px; 
+    position: absolute; 
+    float: left; 
+    color: whitesmoke;
+}
+
+.single-event:hover {
+    cursor: pointer;
+}
